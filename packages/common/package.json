@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "common",
+  "version": "1.0.0",
+  "module": "true",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "eslint": "latest",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "prettier-config-custom": "workspace:*",
+    "tsconfig-custom": "workspace:*",
+    "typescript": "^5.0.4",
+    "vitest": "^0.34.1"
+  },
+  "scripts": {
+    "lint": "yarn shared:prettierlint && yarn shared:eslint && yarn shared:tslint",
+    "lint:fix": "yarn shared:prettierlint:fix && yarn shared:eslint:fix && yarn shared:tslint"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.7"
+  }
+}

@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  output     = "../.prisma/client"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+// example table used in the express router example
+model HighScore {
+  id    Int      @id @default(autoincrement())
+  time  DateTime
+  score Int
+}
+
+model Nodes {
+  nodeID     String  @id
+  xcoord     Int
+  ycoord     Int
+  floor      String
+  building   String
+  nodeType   String
+  longName   String
+  shortName  String
+  startEdges Edges[] @relation("StartNode")
+  endEdges   Edges[] @relation("EndNode")
+  obstacle   Boolean @default(false)
+
+  @@unique([xcoord, ycoord, floor])
+}
+
+model Edges {
+  edgeID      String @id
+  startNodeID Nodes  @relation("StartNode", fields: [startNode], references: [nodeID], onDelete: Cascade)
+  startNode   String
+  endNodeID   Nodes  @relation("EndNode", fields: [endNode], references: [nodeID], onDelete: Cascade)
+  endNode     String
+}
+
+model User {
+  userID   Int    @id @default(autoincrement())
+  username String
+  password String
+  // flowerReq flowerRequest[] @relation("reqUser")
+}
+
+model Flower {
+  fID       Int            @id @default(autoincrement())
+  name      String
+  cost      Float
+  flowerreq flowerRequest? @relation(fields: [reqID], references: [reqID])
+  reqID     Int?
+}
+
+model flowerRequest {
+  reqID         Int      @id @default(autoincrement())
+  // reqUser User     @relation("reqUser", fields: [userID], references: [userID], onDelete: Cascade)
+  // userID  Int
+  cartItems     Flower[] //@relation("Flowers")
+  location      String
+  message       String?
+  recipient     String
+  sender        String
+  total         Float
+  priority      String
+  status        String
+  dateSubmitted DateTime
+}
+
+model sanitationRequest {
+  reqId       Int    @id @default(autoincrement())
+  name        String
+  severity    String
+  location    String
+  typeOfIssue String
+  time        String
+  status      String
+  description String
+  comments    String
+}
+
+model securityRequest {
+  reqID         Int     @id @default(autoincrement())
+  location      String
+  employee      String
+  situation     String
+  call          Boolean
+  status        String
+  priority      String
+  dateSubmitted String?
+}
+
+model internalTransportRequest {
+  reqID         Int      @id @default(autoincrement())
+  employeeName  String
+  patientName   String
+  priority      String
+  locationFrom  String
+  locationTo    String
+  date          DateTime
+  reason        String
+  time          String
+  note          String
+  status        String
+  dateSubmitted String?
+}
+
+model medicationInfo {
+  id                  Int                @id @default(autoincrement())
+  name                String
+  priority            String
+  status              String
+  price               Float
+  quantity            Int
+  medicationRequest   medicationRequest? @relation(fields: [medicationRequestId], references: [id])
+  medicationRequestId Int?
+}
+
+model medicationRequest {
+  id            Int              @id @default(autoincrement())
+  employee      String
+  location      String
+  patient       String
+  dateSubmitted String
+  medication    medicationInfo[]
+}
+
+model employee {
+  id    Int    @id @default(autoincrement())
+  fName String
+  lName String
+  title String
+}
+
+model maintenanceRequest {
+  reqId         Int     @id @default(autoincrement())
+  name          String
+  severity      String
+  location      String
+  typeOfIssue   String
+  status        String
+  description   String
+  dateSubmitted String?
+}
+
+model heatMap {
+  id     Int    @id @default(autoincrement())
+  edgeID String
+}
