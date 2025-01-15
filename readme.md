@@ -12,7 +12,8 @@ Please note that the full functionality of this application is currently not ava
 
 ## Screenshots
 
-![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/c19e6a7d-dc1e-4682-b590-f97b6752a2be)
+![image](https://github.com/user-attachments/assets/a114c6d0-3b4e-42a2-9b40-2471f28314a8)
+
 
 ![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/e2eb6e94-30df-4214-a4fe-85e70e3535bd)
 
