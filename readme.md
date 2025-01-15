@@ -15,13 +15,13 @@ Please note that the full functionality of this application is currently not ava
 ![image](https://github.com/user-attachments/assets/a114c6d0-3b4e-42a2-9b40-2471f28314a8)
 
 
-![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/e2eb6e94-30df-4214-a4fe-85e70e3535bd)
+![image](https://github.com/user-attachments/assets/9a5c8549-b118-45f4-b5de-ed0bee88753b)
 
-![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/eb789cff-32b2-4187-a510-450bf216f9b4)
+![image](https://github.com/user-attachments/assets/3c765a90-ae3e-4aad-abb1-02c45b094b43)
 
-![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/2ed0ae9e-1b43-4ac5-9261-7b354ba5adcd)
+![image](https://github.com/user-attachments/assets/b961f05a-4578-488e-9b66-60e776bcf7bf)
 
-![image](https://github.com/hjsolomon/Kiosk-Application/assets/144631028/31d24230-a393-4c28-8452-b1299fcb4f17)
+![image](https://github.com/user-attachments/assets/97d59885-1113-4ade-a466-f2feb8c2f32c)
 
 
 
